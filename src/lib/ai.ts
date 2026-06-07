@@ -7,17 +7,20 @@ export function generateFallbackIntro(customerName: string, matchName: string, r
 }
 
 export async function generateMatchIntro(customerName: string, matchName: string, reasons: string[]): Promise<string> {
-  const key = process.env.OPENAI_API_KEY;
-  if (!key || key === "your_openai_api_key_here") {
+  const key = process.env.GROQ_API_KEY;
+  if (!key || key === "your_groq_api_key_here") {
     return generateFallbackIntro(customerName, matchName, reasons);
   }
 
   try {
-    const client = new OpenAI({ apiKey: key });
+    const client = new OpenAI({
+      apiKey: key,
+      baseURL: "https://api.groq.com/openai/v1",
+    });
     const reasonsText = reasons.join("; ");
 
     const response = await client.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "llama3-8b-8192",
       max_tokens: 120,
       messages: [
         {
