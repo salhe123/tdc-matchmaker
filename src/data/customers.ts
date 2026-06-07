@@ -2,7 +2,7 @@ import { Customer } from "@/types";
 
 export const MATCHMAKER_CREDENTIALS = {
   username: "matchmaker@tdc.com",
-  password: "TDC@2024",
+  password: "TDC@2026",
   name: "Priya Sharma",
 };
 

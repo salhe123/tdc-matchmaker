@@ -100,7 +100,7 @@ export default function LoginPage() {
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-400">Password:</span>
-                <span className="font-mono font-medium">TDC@2024</span>
+                <span className="font-mono font-medium">TDC@2026</span>
               </div>
             </div>
           </div>
